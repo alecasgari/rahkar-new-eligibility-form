@@ -46,8 +46,17 @@
   function toEnglishNumbers(str) {
     if (typeof str !== "string") return str;
     return str
-      .replace(/[۰-۹]/g, function (d) { return "۰۱۲۳۴۵۶۷۸۹".indexOf(d); })
-      .replace(/[٠-٩]/g, function (d) { return "٠١٢٣٤٥٦٧٨٩".indexOf(d); });
+      .replace(/[۰-۹]/g, function (d) { return String("۰۱۲۳۴۵۶۷۸۹".indexOf(d)); })
+      .replace(/[٠-٩]/g, function (d) { return String("٠١٢٣٤٥٦٧٨٩".indexOf(d)); });
+  }
+
+  function normalizePhone(raw) {
+    var n = toEnglishNumbers(raw || "").replace(/[^\d]/g, "");
+    if (n.indexOf("00") === 0) n = n.slice(2);
+    if (n.indexOf("98") === 0) n = n.slice(2);
+    if (n.charAt(0) === "0") n = n.slice(1);
+    if (n.length === 10 && n.charAt(0) === "9") return "98" + n;
+    return "";
   }
 
   function notifyParentHeight() {
@@ -290,14 +299,19 @@
       return false;
     }
 
-    iti.setNumber(toEnglishNumbers(phoneInput.value.trim()));
+    var typed = toEnglishNumbers(phoneInput.value.trim());
+    iti.setNumber(typed);
     await new Promise(function (r) { setTimeout(r, 80); });
-    if (!iti.isValidNumber()) {
-      alert("شماره وارد شده معتبر نیست. لطفا شماره موبایل را دوباره وارد کنید.");
+
+    var phone = "";
+    try {
+      if (iti.isValidNumber()) phone = iti.getNumber().replace("+", "");
+    } catch (e) {}
+    if (!phone) phone = normalizePhone(typed);
+    if (!phone) {
+      alert("شماره وارد شده معتبر نیست. مثلاً 09121234567 را وارد کنید.");
       return false;
     }
-
-    const phone = iti.getNumber().replace("+", "");
     const slot = bookingText(selectedSlot, selectedTimeLabel);
     finalPackage = {
       form_id: cfg.formId,
