@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets — never publish
+**/serviceAccountKey.json
+**/*.pem
+.env
+.env.*
+
+# Keep the old Node app and n8n exports off this public repo
+legacy/
+n8n-workflows/
+
+node_modules/

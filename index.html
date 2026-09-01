@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فرم ارزیابی مهاجرت - راهکارگشت</title>
+
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WV88X2LR');</script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-62926460HV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-62926460HV', { stream_name: 'RahkarGasht' });
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV88X2LR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <button id="skip-btn" class="hidden" type="button">پرش به رزرو</button>
+
+  <div class="wrap">
+    <div class="card">
+      <header class="header">
+        <img class="logo" src="https://rahkargasht.com/wp-content/uploads/2023/11/LogoJadid.png" alt="لوگو راهکارگشت">
+        <h1 id="title">فرم ارزیابی مهاجرت</h1>
+        <p id="subtitle">با پاسخ به چند سؤال، بهترین مسیر را برای شما پیدا می‌کنیم.</p>
+        <div class="progress" id="progress-wrap"><span id="progress-bar"></span></div>
+      </header>
+
+      <main class="body">
+        <form id="quiz">
+          <section class="page" data-page="1">
+            <h2>تا چند وقت دیگه قصد مهاجرت داری؟</h2>
+            <select name="user_time_force">
+              <option value="بله">زیر شش ماه</option>
+              <option value="بله">شش ماه تا یکسال</option>
+              <option value="خیر">یکسال تا دو سال</option>
+              <option value="فرقی ندارد">فرقی نمیکنه ...</option>
+            </select>
+            <p class="hint">هرچی زودتر، بهتر.</p>
+          </section>
+
+          <section class="page hidden" data-page="2">
+            <h2>چقدر سرمایه برای این مسیر در نظر گرفتی؟</h2>
+            <select name="user_budget">
+              <option value="ضعیف (زیر 5 هزار یورو)">زیر 5 هزار دلار</option>
+              <option value="متوسط (5 تا 10 هزار یورو)">بین 5 تا 10 هزار دلار</option>
+              <option value="خوب (بالای 10 هزار یورو)">بالاتر از 10 هزار دلار</option>
+              <option value="عدم اعلام بودجه">بهش فکر نکردم ...</option>
+            </select>
+          </section>
+
+          <section class="page hidden" data-page="3">
+            <h2>جنسیت شما؟</h2>
+            <div class="choice-row">
+              <label class="choice"><input type="radio" name="user_gender" value="خانم"><span>خانوم</span></label>
+              <label class="choice"><input type="radio" name="user_gender" value="آقا"><span>آقا</span></label>
+            </div>
+          </section>
+
+          <section class="page hidden" data-page="4">
+            <h2>چند سالته؟</h2>
+            <div class="presets">
+              <button type="button" data-age="30">30</button>
+              <button type="button" data-age="35">35</button>
+              <button type="button" data-age="40">40</button>
+              <button type="button" data-age="45">45</button>
+            </div>
+            <div class="spinner" data-name="user_age" data-min="18">
+              <button type="button" data-dir="d">−</button>
+              <input type="text" value="20" readonly>
+              <button type="button" data-dir="i">+</button>
+            </div>
+            <input type="hidden" name="user_age" value="20">
+          </section>
+
+          <section class="page hidden" data-page="5">
+            <h2>سابقه کار داری؟</h2>
+            <div class="choice-row">
+              <label class="choice"><input type="radio" name="user_prejob_exist" value="سابقه کار دارد"><span>بله، دارم</span></label>
+              <label class="choice"><input type="radio" name="user_prejob_exist" value="سابقه کار ندارد"><span>خیر، ندارم</span></label>
+            </div>
+            <div id="job-extra" class="soft-box hidden">
+              <p class="section-title">سابقه کار و تحصیلاتت مرتبطه؟</p>
+              <div class="radio-stack">
+                <label><input type="radio" name="user_prejob_related" value="بله"> بله، مرتبط هستن</label>
+                <label><input type="radio" name="user_prejob_related" value="خیر"> نه، ارتباطی ندارن</label>
+              </div>
+              <p class="section-title" style="margin-top:1rem">چند سال سابقه کار داری؟</p>
+              <div class="spinner" data-name="user_years_of_job" data-min="0">
+                <button type="button" data-dir="d">−</button>
+                <input type="text" value="0" readonly>
+                <button type="button" data-dir="i">+</button>
+              </div>
+              <input type="hidden" name="user_years_of_job" value="0">
+            </div>
+          </section>
+
+          <section class="page hidden" data-page="6">
+            <h2>آخرین مدرک تحصیلی شما؟</h2>
+            <select name="user_education_level">
+              <option value="زیر دیپلم">زیر دیپلم</option>
+              <option value="دیپلم">دیپلم</option>
+              <option value="کاردانی">کاردانی</option>
+              <option value="لیسانس">کارشناسی</option>
+              <option value="ارشد">کارشناسی ارشد</option>
+              <option value="دکترا و بالاتر">دکتری و بالاتر</option>
+            </select>
+          </section>
+
+          <section class="page hidden" data-page="7">
+            <h2>کدام زبان‌ها را بلدی؟</h2>
+            <div id="lang-list" class="lang-list">
+              <label class="lang-item"><input type="checkbox" name="user_lang[]" value="انگلیسی" data-level="user_lang_english"> 🇬🇧 انگلیسی</label>
+              <div class="soft-box hidden" data-stars="user_lang_english"><small>به سطح زبان خودت چند ستاره میدی؟</small><div class="stars" data-name="user_lang_english"><span class="star" data-value="1">☆</span><span class="star" data-value="2">☆</span><span class="star" data-value="3">☆</span><span class="star" data-value="4">☆</span><span class="star" data-value="5">☆</span></div><input type="hidden" name="user_lang_english" value="0"></div>
+              <label class="lang-item"><input type="checkbox" name="user_lang[]" value="آلمانی" data-level="user_lang_german"> 🇩🇪 آلمانی</label>
+              <div class="soft-box hidden" data-stars="user_lang_german"><small>به سطح زبان خودت چند ستاره میدی؟</small><div class="stars" data-name="user_lang_german"><span class="star" data-value="1">☆</span><span class="star" data-value="2">☆</span><span class="star" data-value="3">☆</span><span class="star" data-value="4">☆</span><span class="star" data-value="5">☆</span></div><input type="hidden" name="user_lang_german" value="0"></div>
+              <label class="lang-item"><input type="checkbox" name="user_lang[]" value="ایتالیایی" data-level="user_lang_italy"> 🇮🇹 ایتالیایی</label>
+              <div class="soft-box hidden" data-stars="user_lang_italy"><small>به سطح زبان خودت چند ستاره میدی؟</small><div class="stars" data-name="user_lang_italy"><span class="star" data-value="1">☆</span><span class="star" data-value="2">☆</span><span class="star" data-value="3">☆</span><span class="star" data-value="4">☆</span><span class="star" data-value="5">☆</span></div><input type="hidden" name="user_lang_italy" value="0"></div>
+              <label class="lang-item"><input type="checkbox" name="user_lang[]" value="اسپانیایی" data-level="user_lang_spain"> 🇪🇸 اسپانیایی</label>
+              <div class="soft-box hidden" data-stars="user_lang_spain"><small>به سطح زبان خودت چند ستاره میدی؟</small><div class="stars" data-name="user_lang_spain"><span class="star" data-value="1">☆</span><span class="star" data-value="2">☆</span><span class="star" data-value="3">☆</span><span class="star" data-value="4">☆</span><span class="star" data-value="5">☆</span></div><input type="hidden" name="user_lang_spain" value="0"></div>
+            </div>
+            <label class="switch"><input type="checkbox" id="lang-none" name="user_lang[]" value="هیچکدام"> هیچکدام</label>
+            <p id="lang-none-msg" class="hint hidden">نگران نباش، برای زبان هم راهکار داریم.</p>
+          </section>
+
+          <section class="page hidden" data-page="8">
+            <h2>وضعیت تاهل</h2>
+            <div class="choice-row">
+              <label class="choice"><input type="radio" name="user_marriage_status" value="متاهل"><span>متاهل هستم</span></label>
+              <label class="choice"><input type="radio" name="user_marriage_status" value="مجرد"><span>مجرد هستم</span></label>
+            </div>
+            <label class="switch"><input type="checkbox" id="has-children" name="user_marriage_children_status" value="دارای فرزند است"> فرزند دارم</label>
+            <div id="children-extra" class="soft-box hidden">
+              <p>تعداد فرزندان زیر ۱۸ سال</p>
+              <div class="spinner" data-name="user_no_children_under_18" data-min="0">
+                <button type="button" data-dir="d">−</button>
+                <input type="text" value="0" readonly>
+                <button type="button" data-dir="i">+</button>
+              </div>
+              <input type="hidden" name="user_no_children_under_18" value="0">
+              <p style="margin-top:1rem">تعداد فرزندان بالای ۱۸ سال</p>
+              <div class="spinner" data-name="user_no_children_above_18" data-min="0">
+                <button type="button" data-dir="d">−</button>
+                <input type="text" value="0" readonly>
+                <button type="button" data-dir="i">+</button>
+              </div>
+              <input type="hidden" name="user_no_children_above_18" value="0">
+            </div>
+          </section>
+
+          <section class="page hidden" data-page="9">
+            <h2>چه کشورهایی را برای مهاجرت در نظر داری؟</h2>
+            <div id="countries" class="repeater">
+              <div class="repeater-row"><input type="text" name="user_intent_countries[]" class="persian-only" placeholder="مثلا: کانادا"></div>
+            </div>
+            <button type="button" id="add-country" class="linkish">+ افزودن کشور دیگر</button>
+          </section>
+
+          <section class="page hidden" data-page="10">
+            <h2>اگر نکته دیگری هست اینجا بنویس.</h2>
+            <textarea name="user_comment" class="persian-only" maxlength="300"></textarea>
+          </section>
+        </form>
+
+        <section id="loading" class="hidden center">
+          <div class="loader"></div>
+          <p>هوش مصنوعی راهکار در حال پردازش اطلاعات شماست. لطفاً این صفحه را نبندید...</p>
+          <div class="bar"><span id="load-bar">0%</span></div>
+          <button type="button" id="show-report" class="btn btn-primary hidden" style="margin-top:1.25rem">مشاهده گزارش</button>
+        </section>
+
+        <section id="result" class="hidden">
+          <p class="section-title">برای دریافت گزارش کامل، اطلاعات زیر را تکمیل و زمان تماس را انتخاب کنید:</p>
+          <div class="field">
+            <label for="final_name">نام و نام خانوادگی</label>
+            <input type="text" id="final_name" class="persian-only" required>
+          </div>
+          <div class="field">
+            <label for="final_phone">شماره موبایل</label>
+            <input type="tel" id="final_phone" required>
+          </div>
+          <p class="section-title">بهترین زمان برای تماس را انتخاب کنید:</p>
+          <div id="days" class="days"></div>
+          <div id="times" class="times"></div>
+        </section>
+
+        <section id="otp" class="hidden center">
+          <h2>تایید شماره موبایل</h2>
+          <p class="hint">یک کد ۵ رقمی به شماره شما ارسال شد. لطفاً آن را وارد کنید.</p>
+          <input type="tel" id="otp_code" class="otp-input" maxlength="5" placeholder="-----">
+          <p id="otp-error" class="error"></p>
+          <p id="resend"></p>
+          <button type="button" id="verify-otp" class="btn btn-primary">تایید کد</button>
+        </section>
+
+        <section id="thanks" class="hidden center">
+          <div class="thanks-icon">✓</div>
+          <h2>از اعتماد شما سپاسگزاریم!</h2>
+          <div id="ai-box" class="alert hidden">
+            <strong>تحلیل هوش مصنوعی راهکار از وضعیت شما</strong>
+            <p id="ai-text"></p>
+          </div>
+          <p>اطلاعات شما با موفقیت ثبت شد و به زودی گزارش کامل برایتان ارسال می‌گردد.</p>
+          <div class="actions">
+            <button type="button" id="retest" class="btn btn-primary">تست مجدد</button>
+            <button type="button" id="share" class="btn btn-outline">ارسال برای دوستان</button>
+            <button type="button" id="home" class="btn btn-outline">بازگشت به سایت</button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer" id="nav">
+        <button type="button" id="prev" class="btn btn-ghost hidden">قبلی</button>
+        <button type="button" id="next" class="btn btn-primary">بعدی</button>
+        <button type="button" id="submit-quiz" class="btn btn-primary hidden">مشاهده نتیجه</button>
+        <button type="button" id="send-otp" class="btn btn-primary hidden">ارسال کد تایید</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <script src="./js/config.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
