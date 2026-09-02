@@ -84,8 +84,10 @@ html.embed .card {
 }
 
 .logo {
-  height: 48px;
+  height: 56px;
   width: auto;
+  max-width: 240px;
+  object-fit: contain;
   margin-bottom: 0.75rem;
 }
 
